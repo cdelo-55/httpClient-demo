@@ -1,3 +1,22 @@
-<p>
-  customer-update works!
-</p>
+<div>
+<form [formGroup]="updateCustomerForm" (ngSubmit)="updateCustomer()">
+    Name:
+   <input type="text">
+  
+   Email:
+   <input type="email" formControlName="email" required email>
+   
+   <div *ngIf="updateCustomerForm.controls.email.invalid && 
+     updateCustomerForm.controls.email.dirty" 
+     class="alert alert-danger">
+      Fill in valid email.
+    </div> 
+
+  Telephone:
+  <input type="text">
+
+
+  <input type="update" [disabled]="updateCustomerForm.valid === false" value="Update">
+  
+</form>
+</div>  

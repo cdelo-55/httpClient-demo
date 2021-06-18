@@ -2,12 +2,9 @@
   "customers": [
     {
       "id": 1,
-      "name": "Vivien Volkman",
-      "email": "Katrine24@yahoo.com",
-      "phone": "966.791.6400 x4131",
-      "city": "New Anjalimouth",
-      "country": "Dominica",
-      "title": "District Optimization Facilitator"
+      "name": "",
+      "email": "",
+      "tel": ""
     },
     {
       "id": 2,

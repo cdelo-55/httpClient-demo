@@ -8,7 +8,7 @@ import {catchError, tap} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CustomerService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getCustomer(id: number): Observable<Customer> {
     // TODO - Send a request to the API to get the correct Customer data using the httpClient. This method should return an Observable!
@@ -27,6 +27,15 @@ export class CustomerService {
           console.log('fetched customers');
         }),
         catchError(this.handleError('get Customer', []))
+      );
+  }
+
+  updateCustomer(id: number, customer: Customer): Observable<Customer> {
+    console.log(customer);
+
+    return this.httpClient.put<Customer>(`http://127.0.0.1:3000/customers/${id}`, customer, {}).pipe(
+        tap(_ => console.log(`updated customer`)),
+        catchError(this.handleError(`update Customer`, new Customer()))
       );
   }
 
