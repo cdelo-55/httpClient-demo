@@ -1,4 +1,5 @@
-<div class="justify-content-center align-items-center py-5">
+<div *ngIf="customer else empty" 
+  class="justify-content-center align-items-center py-5">
   <h2 class="border-bottom">{{customer.name}}</h2>
   <nav>
     <a routerLink="/update/{{id}}">Edit</a>
